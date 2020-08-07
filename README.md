@@ -21,12 +21,17 @@ For AWS Cognito, this package currently supports 2 modes of authentication:
   - **aws_cognito_pool_client_id** - AWS Cognito Pool Client ID (one with no secret key)
 
 ### Other Arguments
-- **aws_region** The AWS Region of the AppSync API to use
-- **appsync_api_id** The API ID of the AppSync API to make subscriptions to
+- **aws_region** The AWS Region of the AppSync API to use (default: us-west-2) (_optional_)
+- **appsync_api_id** The API ID of the AppSync API to make subscriptions to (_required_)
+- **on_connection_error** Callback function to notify of errors while connecting to GraphQL API endpoint (_required_)
+- **on_error** Callback function to notify non-connection related errors (_required_)
+- **cb_data** Opaque data that is passed back with any callback functions that the manager calls (_optional_)
+- **logger** An instance of python logging getLogger (_optional_)
+
 
 ## Using the AppSync Subscription Manager
 
-Here is an example of using the subscription manager to register for notifications when a user is created.
+Here is an example of using the subscription manager to register for notifications when a user is created or updated.
 
 ```python
 import appsync_subscription_manager as asm
