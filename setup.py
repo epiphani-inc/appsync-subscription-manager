@@ -8,7 +8,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='epiphani-appsync-subscription-manager',
-    version='0.1.1',
+    version='0.1.2',
     license='MIT',
     install_requires=[
         'enum34;python_version<"3.4"',
@@ -25,5 +25,5 @@ setup(
     long_description_content_type='text/markdown',
     packages=['appsync_subscription_manager'],
     include_package_data=True,
-    description="Appsync python client for consuming the graphql endpoint",
+    description="python client for managing AWS appsync graphql subscriptions",
 )
