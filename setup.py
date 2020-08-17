@@ -8,16 +8,16 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='epiphani-appsync-subscription-manager',
-    version='0.1.0',
+    version='0.1.1',
     license='MIT',
     install_requires=[
         'enum34;python_version<"3.4"',
-        'future>=0.18.2',
-        'six>=1.15.0',
+        'future',
+        'six',
         'warrant>=0.6.1',
         'websocket-client>=0.57.0'
     ],
-    python_requires='>=2.7.16',
+    python_requires='>=2.7',
     author='Praveen Madhav',
     author_email='praveen@epiphani.io',
     url='https://github.com/epiphani-inc/appsync-subscription-manager',
