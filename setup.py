@@ -8,7 +8,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='epiphani-appsync-subscription-manager',
-    version='0.1.2',
+    version='0.1.3',
     license='MIT',
     install_requires=[
         'enum34;python_version<"3.4"',
