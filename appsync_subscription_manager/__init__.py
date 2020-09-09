@@ -47,17 +47,25 @@ WS_HEADERS = {
     'User-Agent': 'Python/{0[0]}.{0[1]} AppSyncSubscriptionManager/{1}'.format(sys.version_info, VERSION)
 }
 
+def set_gql_psk(gql_psk):
+    global GQL_PSK
+    GQL_PSK = gql_psk
+
+def set_local_gql_frag(lgf):
+    global LOCAL_GQL_FRAG
+    LOCAL_GQL_FRAG = lgf
+
 def b64encode(data):
-    if six.PY3:
-        return base64.b64encode(data.encode()).decode()
-    else:
+    if six.PY2:
         return base64.b64encode(data)
+    else:
+        return base64.b64encode(data.encode()).decode()
 
 def b64decode(data):
-    if six.PY3:
-        return base64.b64decode(data.encode()).decode()
-    else:
+    if six.PY2:
         return base64.b64decode(data)
+    else:
+        return base64.b64decode(data.encode()).decode()
 
 class AppSyncSubscription():
     def __init__(self, sub_id = None,
