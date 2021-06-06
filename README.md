@@ -35,6 +35,7 @@ Here is an example of using the subscription manager to register for notificatio
 
 ```python
 import appsync_subscription_manager as asm
+import time
 
 AWS_APPSYNC_GQL_ENDPOINT_ID = 'dnj38asdfkn344nmkfndfnkl4nlk'
 ID_TOKEN = 'JWT_ID_TOKEN'
@@ -118,4 +119,8 @@ user_update_sub = my_mgr.subscribe(USER_UPDATE_SUBSCRIPTION, user_updated,
 
 # Start the read loop to wait for subscription notifications
 my_mgr.run_forever()
+
+# Prevent the main thread from exiting
+while True:
+    time.sleep(30)
 ```
